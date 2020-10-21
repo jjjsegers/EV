@@ -35,13 +35,14 @@ GPDC <- function(trainingdata, data_to_be_tested, max_neighbours, threshold_valu
   #remove distances with same obs (itself)
   distances_neg <- subset( distances_neg, select = -1 )
   
+  #Determine nbr of upper order statistics
   threshold <- distances_neg[,upper_order_nb+1]
   distances_neg <- distances_neg[,-(upper_order_nb+1)]
 
   R <- (distances_neg)/threshold
 
-
-  shape <- mean(log(R[,1][R[,1] != 0])))
+  #GPD properties applied to R to estimate Epsi_n 
+  shape <- apply(R, 1, function(x) mean(log(x[x != 0])))
 
   
   
