@@ -35,6 +35,13 @@ GPDC <- function(trainingdata, data_to_be_tested, max_neighbours, threshold_valu
   #remove distances with same obs (itself)
   distances_neg <- subset( distances_neg, select = -1 )
   
+  threshold <- distances_neg[,upper_order_nb+1]
+  distances_neg <- distances_neg[,-(upper_order_nb+1)]
+
+  R <- (distances_neg)/threshold
+
+
+  shape <- apply(R,1,function(x) mean(log(x[x != 0])))
 
   
   
