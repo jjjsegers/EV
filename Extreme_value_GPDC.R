@@ -41,7 +41,7 @@ GPDC <- function(trainingdata, data_to_be_tested, max_neighbours, threshold_valu
   R <- (distances_neg)/threshold
 
 
-  shape <- apply(R,1,function(x) mean(log(x[x != 0])))
+  shape <- mean(log(R[,1][R[,1] != 0])))
 
   
   
