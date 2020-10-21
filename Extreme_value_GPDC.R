@@ -30,10 +30,10 @@ GPDC <- function(trainingdata, data_to_be_tested, max_neighbours, threshold_valu
   
   #Distances in base set
   distances <- nn2(trainingdata,trainingdata,k=max_neighbours)
-  distances <- distances$nn.dist
+  distances_neg <- -(distances$nn.dist)
   
   #remove distances with same obs (itself)
-  distances <- subset( distances, select = -1 )
+  distances_neg <- subset( distances_neg, select = -1 )
   
 
   
