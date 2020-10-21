@@ -8,6 +8,8 @@ require("evd")
 #Inspired from https://rdrr.io/cran/evtclass/src/R/gpdcTrain.R
 # From E. Vignotto
 
+# hello ! test...
+
 # Set Working Directory
 wd <- "/Users/Timot/OneDrive/Bureau//mémoire"
 setwd(wd)
